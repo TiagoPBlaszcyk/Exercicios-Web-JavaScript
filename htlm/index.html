@@ -10,12 +10,37 @@
 
 <body>
     <header>
-        Exercícios HTML
+        <h1>Exercícios HTML</h1>
     </header>
     <nav>
         <a href="exercicios/teste.html">00 - Teste</a>
+        <a href="exercicios/temp.html">Tempe</a>
+
+        <!--  Orgranizando por tag personalizada works too
+            <a href legal="exercicios/teste.html">00 - Teste</a>
+            <a href legal="exercicios/temp.html">Tempe</a>
+         -->
     </nav>
     <section id="conteudo"></section>
+    <footer>
+        <br>
+        Curso Web Udemy
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link =>{
+            /* document.querySelectorAll('[legal]').forEach(link =>{ */
+            link.onclick = function (e) {
+                e.preventDefault()
+                const conteudo = document.getElementById('conteudo')
+                fetch(link.href)
+            /*  fetch(link.getAttribute('legal'))    */
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
 </body>
 
 </html>
+
+<!-- LEGaU xD -->
