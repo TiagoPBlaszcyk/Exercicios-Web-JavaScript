@@ -13,15 +13,15 @@
         <h1>Exercícios HTML</h1>
     </header>
     <nav>
-        <a href="exercicios/temp.html">Tempe</a>
-        <a href="exercicios/teste.html">00 - Teste</a>
-        <a href="exercicios/texto1.html">01 - Teste</a>
-        <a href="exercicios/texto2.html">02 - Teste</a>
+        <a href="exercicios/temp.html">Loggin</a> |
+        <a href="exercicios/teste.html">00 - Teste</a> |
+        <a href="exercicios/texto1.html">01 - Teste</a> |
+        <a href="exercicios/texto2.html">02 - Teste</a> |
         
-        <!--  Orgranizando por tag personalizada works too
+      <!--  Orgranizando por tag personalizada works too
             <a href legal="exercicios/teste.html">00 - Teste</a>
             <a href legal="exercicios/temp.html">Tempe</a>
-         -->
+        -->
     </nav>
     <section id="conteudo"></section>
     <footer>
@@ -30,7 +30,7 @@
     </footer>
     <script>
         document.querySelectorAll('a').forEach(link =>{
-            /* document.querySelectorAll('[legal]').forEach(link =>{ */
+     /* document.querySelectorAll('[legal]').forEach(link =>{ */
             link.onclick = function (e) {
                 e.preventDefault()
                 const conteudo = document.getElementById('conteudo')
