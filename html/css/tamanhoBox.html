@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+
+        /* 
+        * {
+            box-sizing: border-box;  SELETOR UNIVERSAL * consegue passar para todos os filhos "via heranca " 
+        }
+         */
+
         body {
             font-size: 45px;
+            margin: 0;
+            /* box-sizing: border-box; nao é passado por heranca */
+        }
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            box-sizing: border-box; /* content-box= conteudo fixado em width 100% sem levar consideracao por borda / border-box = width 100 contando com a borda */
         }
     </style>
 </head>
@@ -15,3 +32,5 @@
     </div>
 </body>
 </html>
+
+<!-- width 100% não garante limite pode passar pelo padding no caso 100% mais 100px 120% -->
