@@ -11,10 +11,77 @@
             margin: 0;
         }
 
+        html {
+            font-size: 28px;
+        }
+
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        div {
+            font-size: 50px;
+        }
+
+        p {
+            /* Valores padroes */
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12px;
+            /* Valores absolutas */
+            font-size: 100px;
+            /* Depende da densidade de pixels vs tamanho real */
+            font-size: 72pt;
+            /* pontos */
+            font-size: 1in;
+            /* polegado fora do padrao para br */
+            /* Relativas */
+            font-size: 2.2em;
+            /* Referencia do pai mais proximo DIV */
+            font-size: 2.2rem;
+            /* Pai maior raiz HTML */
+            font-size: 50vh;
+            font-size: 10vw;
+            
+            font-family: monospace;
+            font-family: Georgia, serif;
+            font-family: Verdana, sans-serif;
+            font-family: 'Indie Flower', cursive;
+
+            font-weight: 900;
+            /* Grossura Bold Border*/
+            font-style: italic;
+            /* text-transform: uppercase; */
+            /* text-decoration: overline line-through underline; */
+            word-spacing: 10px;
+            /* Espaco entre palavras */
+            letter-spacing: 20px;
+            /* Espaco entre letras */
+            line-height: 2em;
+            /* Espaco entre linhas */
+            text-align: center;
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background-color: orange;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active{
+            background-color: rgb(122, 67, 0);
+            box-shadow: none;
+            color: #000;
         }
     </style>
 </head>
