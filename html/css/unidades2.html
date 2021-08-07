@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <title>Unidades #02</title>
     <style>
-        /* ... */
+        .fora{
+            position: relative;
+            background-color: orange;
+            height: 400px;
+            width: 400px;
+            padding: 50px; /* comente padding */
+        }
+        .dentro{
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: static;/* somente conteudo */
+            position: relative;/* somente conteudo */
+            position: absolute;/*  conteudo + padding */
+            position: fixed;/* Tamanho do view port */
+        }
     </style>
 </head>
 <body>
-    <div class="fora">
+    <div class="fora"> <!-- Div assume sua altura de acordo com o conteudo e DISPLAY BLOCK largura 100% -->
         <div class="dentro"></div>
     </div>
 </body>
