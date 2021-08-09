@@ -6,7 +6,63 @@
     <title>Position</title>
     <style>
         html{
-            background-color: aquamarine;
+            background-color: rgb(254, 255, 222);
+        }
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+            color: #fff;
+        }
+        /* static é a posicao padrao nao leva em conta top and left */
+        .static {
+            top: 100px;
+            left: 100px;
+            background-color: steelblue;
+        }
+        /* Fixa o elemento na tela (quando rolar a barra ele nao se meche) */
+        .fixed{
+            position: fixed;
+            bottom: 30px;
+            right: 0;
+            background-color: skyblue;
+        }
+        /* Ponto de ancoragem é o elemento anterior */
+        .relative1{
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+        /* ancoragem é levando consideracao a pagina como um todo */
+        .absolute1{
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+        .relative2{
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategrey;
+        }
+        /* caso o pai no caso relative2 nao estivese setado iria pegar a pagina com um todo, nao extrapolando o tamanho do "pai" */
+        .absolute2{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+        .sticky{
+           position: -webkit-sticky; /* safari nao le propriedade padrao  */
+           position: sticky;
+           background-color: #777;
+           top: 10px;
         }
     </style>
 </head>
