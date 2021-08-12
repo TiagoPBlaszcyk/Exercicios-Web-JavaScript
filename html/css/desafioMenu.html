@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-       * {
+        * {
             box-sizing: border-box;
         }
 
@@ -118,7 +118,7 @@
     <header class="cabecalho">
         <div class="logo">
             <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo"/>
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
             </a>
         </div>
         <nav class="menu">
@@ -147,15 +147,17 @@
     </header>
 
     <script>
-        window.onhashchange = function(e) {
-            const oldURL = e.oldURL.split('#')[1]
-            const newURL = e.newURL.split('#')[1]
-            console.log(oldURL, newURL)
-            const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`)
-            const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
-            oldLink && oldLink.classList.remove('selected')
-            newLink && newLink.classList.add('selected')
+        function efeitomenu() {
+            const link = window.location.href.split('#')[1]
+            if (link !== undefined) {
+                document.querySelectorAll('.menu a').forEach((x) => x.classList.remove('selected')) //Zera as classes selecteds dos links
+                document.querySelector(`.menu a[href='#${link}']`).classList.add('selected')
+            } else {
+                document.querySelector(`.menu a[href='#inicio']`).classList.add('selected')
+            }
         }
+        window.onload = efeitomenu()
+        window.onhashchange = (e) => efeitomenu()
     </script>
 </body>
 
