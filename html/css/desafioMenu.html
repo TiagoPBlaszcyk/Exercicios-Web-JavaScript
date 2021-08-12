@@ -7,66 +7,110 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        * {
+       * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+        }
+
+        .cabecalho {
+            background: #333;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .menu-toggle {
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px 15px;
+        }
+
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu ul {
             margin: 0;
             padding: 0;
         }
 
-        body {
-            background-color: rgb(211, 211, 211);
+        .menu li {
+            display: inline-block;
         }
 
-        header {
-            border-bottom: solid 7px rgb(137, 174, 198);
-            background-color: rgb(51, 51, 51);
-            box-sizing: content-box;
-            width: 100vw;
-            height: 60px;
-        }
-
-        a {
-            font-family: Oswald, 'Times New Roman', Times, serif;
+        .cabecalho a {
             text-decoration: none;
-            color: #fff;
+            color: #eee;
+            font-size: 1.3em;
         }
 
-        .logo {
-            margin-right: 10px;
-            margin-top: 8px;
-            float: left;
+        .menu a {
+            padding: 15px;
         }
 
-        li {
-            margin-left: 20px;
-            margin-top: 8px;
-            padding: 9px;
-            display: block;
-            float: left;
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
-        .entrar {
-            margin-right: 20px;
-            margin-top: 18px;
-            font-size: 15px;
+        .autenticacao {
             float: right;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu a:hover,
+        .menu a.selected {
+            background-color: #4faddb;
+            color: #000;
         }
 
         .botao {
-            box-shadow: 2px 2px 1px 1px #000;
-            background-color: red;
-            color: #fff;
-            border-radius: 25px;
-            padding: 10px 30px;
-            margin-right: 30px;
-            margin-top: 7px;
-            font-size: 15px;
-            float: right;
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
         }
-        
+
+        .destaque {
+            background: #f50a31;
+            color: #fff;
+        }
+
+        @media(min-width: 679px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media(max-width: 680px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        @media(max-width: 910px) {
+            .autenticacao {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -74,7 +118,7 @@
     <header class="cabecalho">
         <div class="logo">
             <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" width="250" height="44" />
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo"/>
             </a>
         </div>
         <nav class="menu">
@@ -97,8 +141,8 @@
             <i class="fa fa-lg fa-bars"></i>
         </button>
         <aside class="autenticacao">
-            <a href="#registar" class="botao destaque">Registrar</a>
             <a href="#login" class="entrar">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
         </aside>
     </header>
 
