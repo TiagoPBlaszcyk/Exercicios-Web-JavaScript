@@ -9,8 +9,27 @@
     <div id="primeiro">#primeiro</div>
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
-    <script>              
-        // ...
+    <script>        
+        /* Pegando elementos pelo ID */      
+        document.getElementById('primeiro').classList.add('destaque')
+        const divs = document.getElementsByTagName('div')
+        
+        /* Metodos para usar um html collections em forma de array, disponibilizando filter map forEach */
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+        /* segundo metodo */
+        const divsArray = [...divs]
+        
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        /* Pegando elementos pela classe */
+        /* Tambem vem em html collection, porem se usado de forma imperativa funciona*/
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        
+        for(let e of ultimosElementos){
+            e.classList.remove('destaque')
+        }
+        
+
     </script>
 </body>
 </html>
