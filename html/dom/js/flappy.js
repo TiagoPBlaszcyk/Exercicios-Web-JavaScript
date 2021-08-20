@@ -101,8 +101,7 @@ function Passaro(alturaJogo) {
     this.setY(alturaJogo / 2)
 }
 
-
-
+/* Progresso é responsavel pela contagem de pontuacao sup.direto */
 function Progresso() {
     this.elemento = novoElemento('span', 'progresso')
     this.atualizarPontos = pontos => {
@@ -114,6 +113,11 @@ function Progresso() {
 function estaoSobrepostos(elementoA, elementoB) {
     const a = elementoA.getBoundingClientRect()
     const b = elementoB.getBoundingClientRect()
+
+/*  A  [ left + width o valor é igual a essa  barreira >]
+                                                        [ < essa é o left do b ]  B
+
+*/
 
     const horizontal = a.left + a.width >= b.left
         && b.left + b.width >= a.left
@@ -128,8 +132,8 @@ function colidiu(passaro, barreiras) {
         if (!colidiu) {
             const superior = parDeBarreiras.superior.elemento
             const inferior = parDeBarreiras.inferior.elemento
-            colidiu = estaoSobrepostos(passaro.elemento, superior)
-                || estaoSobrepostos(passaro.elemento, inferior)
+            colidiu = estaoSobrepostos(passaro.elemento, superior) 
+                      || estaoSobrepostos(passaro.elemento, inferior)
         }
     })
     return colidiu
@@ -147,12 +151,13 @@ function FlappyBird() {
         () => progresso.atualizarPontos(++pontos))
     const passaro = new Passaro(altura)
 
+    /* Adicionando obejtos na tela */
     areaDoJogo.appendChild(progresso.elemento)
     areaDoJogo.appendChild(passaro.elemento)
     barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
 
     this.start = () => {
-        // loop do jogo
+        /* O objetivo do projeto é a manipulacao da DOM */
         const temporizador = setInterval(() => {
             barreiras.animar()
             passaro.animar()
