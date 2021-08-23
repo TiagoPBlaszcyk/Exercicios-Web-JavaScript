@@ -7,4 +7,4 @@ app.use(express.json())
 
 app.get('/legal', (req, res) => res.send('Fechou'))
 
-app.listen(8080, () => console.log('Executando...'))
+app.listen(8080, () => console.log('Executando...')) 
