@@ -5,6 +5,13 @@ app.use(express.static('.'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+app.post ('/upload', (req, res) => {
+    upload(req, res, err => {
+        if(err) {return res.end('Ocorreu um erro.')}
+        res.end(`Concluido com sucesso.`)
+    })
+})
+
 const multer = require('multer')
 
 const storage = multer.diskStorage({
@@ -15,5 +22,7 @@ const storage = multer.diskStorage({
         callback(null, `${Date.now()}_${file.originalname}`)
     }
 })
+
+const upload = multer({storage}).single('arquivo')
 
 app.listen(8080, () => console.log('Executando...')) 
