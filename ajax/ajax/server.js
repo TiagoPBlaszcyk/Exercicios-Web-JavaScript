@@ -8,6 +8,12 @@ app.use(express.json())
 const multer = require('multer')
 
 const storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        callback(null, '.')
+    },
+    filename: function (req, file, callback) {
+        callback(null, `${Date.now()}_${file.originalname}`)
+    }
 })
 
 app.listen(8080, () => console.log('Executando...')) 
